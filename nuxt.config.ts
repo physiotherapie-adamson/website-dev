@@ -5,8 +5,8 @@ export default defineNuxtConfig({
       "@nuxtjs/google-fonts",
       {
         families: {
-          Inter: true,
-          "JetBrains Mono": true,
+          Inter: "100..900",
+          "JetBrains Mono": "100..900",
         },
       },
     ],
