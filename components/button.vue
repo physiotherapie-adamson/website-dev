@@ -4,13 +4,11 @@ import { cva } from "class-variance-authority";
 type Props = {
   variant?: NonNullable<Parameters<typeof buttonVariants>[0]>["variant"];
   size?: NonNullable<Parameters<typeof buttonVariants>[0]>["size"];
-  as?: any;
 };
 
 withDefaults(defineProps<Props>(), {
   variant: "default",
   size: "default",
-  as: "button",
 });
 
 const buttonVariants = cva(
@@ -26,10 +24,8 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {
-        default: "h-9 px-4 py-2",
-        sm: "rounded-md text-xs",
-        lg: "h-10 rounded-md px-8",
-        icon: "h-9 w-9",
+        default: "px-4 py-2",
+        sm: "text-xs",
       },
     },
   },
@@ -37,7 +33,7 @@ const buttonVariants = cva(
 </script>
 
 <template>
-  <component :is="as" :class="buttonVariants({ variant, size })">
+  <NuxtLink :class="buttonVariants({ variant, size })">
     <slot />
-  </component>
+  </NuxtLink>
 </template>

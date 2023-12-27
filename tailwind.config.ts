@@ -3,7 +3,6 @@ import type { Config } from "tailwindcss";
 import defaultTheme from "tailwindcss/defaultTheme";
 
 export default {
-  darkMode: "class",
   theme: {
     container: {
       center: true,
