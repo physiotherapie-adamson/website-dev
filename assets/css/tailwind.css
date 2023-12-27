@@ -45,6 +45,6 @@
   html,
   body,
   #__nuxt {
-    @apply h-full min-h-full;
+    @apply h-full min-h-full overflow-x-hidden;
   }
 }

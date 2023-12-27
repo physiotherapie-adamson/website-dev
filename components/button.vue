@@ -1,14 +1,19 @@
 <script setup lang="ts">
 import { cva } from "class-variance-authority";
+import { NuxtLink } from "#components";
+import { cn } from "~/lib/utils";
 
 type Props = {
   variant?: NonNullable<Parameters<typeof buttonVariants>[0]>["variant"];
   size?: NonNullable<Parameters<typeof buttonVariants>[0]>["size"];
+  as?: any;
+  class?: string;
 };
 
-withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<Props>(), {
   variant: "default",
   size: "default",
+  as: NuxtLink,
 });
 
 const buttonVariants = cva(
@@ -26,6 +31,7 @@ const buttonVariants = cva(
       size: {
         default: "px-4 py-2",
         sm: "text-xs",
+        icon: "px-1 py-1 rounded-full",
       },
     },
   },
@@ -33,7 +39,7 @@ const buttonVariants = cva(
 </script>
 
 <template>
-  <NuxtLink :class="buttonVariants({ variant, size })">
+  <component :is="as" :class="cn(buttonVariants({ variant, size }), props.class)">
     <slot />
-  </NuxtLink>
+  </component>
 </template>
