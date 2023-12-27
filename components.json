@@ -1,13 +1,11 @@
 {
   "style": "new-york",
-  "typescript": true,
   "tailwind": {
     "config": "tailwind.config.ts",
     "css": "assets/css/tailwind.css",
     "baseColor": "slate",
     "cssVariables": true
   },
-  "framework": "nuxt",
   "aliases": {
     "components": "@/components",
     "utils": "@/lib/utils"
